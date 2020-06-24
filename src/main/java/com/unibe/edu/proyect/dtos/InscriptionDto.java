@@ -1,9 +1,7 @@
 package com.unibe.edu.proyect.dtos;
 
-import javax.persistence.Lob;
-
 import com.unibe.edu.proyect.entity.Inscription;
-import com.unibe.edu.proyect.entity.Student;
+
 
 public class InscriptionDto {
 
