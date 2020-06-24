@@ -1,8 +1,16 @@
 package com.unibe.edu.proyect.entity;
 
-public class Career {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Career {
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 	private int cod_career;
+
 	private String desscription;
 	private int semesters;
 	private int hours;

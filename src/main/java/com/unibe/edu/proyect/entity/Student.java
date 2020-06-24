@@ -1,10 +1,15 @@
 package com.unibe.edu.proyect.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 @Entity
-public class student {
-
+public class Student {
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id_student;
+
 	private String ci;
 	private String names;
 	private String lastNames;
@@ -12,7 +17,7 @@ public class student {
 	private String phone;
 	private String bornDate;
 	private String adress;
-	public student(int id_student, String ci, String names, String lastNames, String mail, String phone,
+	public Student(int id_student, String ci, String names, String lastNames, String mail, String phone,
 			String bornDate, String adress) {
 		super();
 		this.id_student = id_student;
