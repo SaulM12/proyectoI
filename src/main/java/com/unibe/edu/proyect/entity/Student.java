@@ -17,6 +17,10 @@ public class Student {
 	private String phone;
 	private String bornDate;
 	private String adress;
+	
+	public Student() {
+		
+	}
 	public Student(int id_student, String ci, String names, String lastNames, String mail, String phone,
 			String bornDate, String adress) {
 		super();

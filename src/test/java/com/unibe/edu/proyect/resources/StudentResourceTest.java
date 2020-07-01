@@ -31,7 +31,7 @@ public class StudentResourceTest {
 	}
 
 	@Test
-	public void createProductTest() {
+	public void createStudentTest() {
 		restService.restBuilder().path(StudentResource.STUDENT).body(studentDto).post().build();
 	}
 }
