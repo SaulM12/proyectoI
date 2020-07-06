@@ -34,4 +34,10 @@ public class StudentResourceTest {
 	public void createStudentTest() {
 		restService.restBuilder().path(StudentResource.STUDENT).body(studentDto).post().build();
 	}
+	@Test
+	public void readAllStudentsTest() {
+		String json= restService.restBuilder(new RestBuilder<String>()).clazz(String.class).path(StudentResource.STUDENT)
+				.path(StudentResource.ID).expand(1).get().build();
+		System.out.println("----->"+json);
+	}
 }
