@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,5 +41,9 @@ public class StudentResource {
 	@GetMapping (value = ID)
 	public StudentDto readStudentbyId(@PathVariable int id) throws StudentDontFound{
 		return this.studentController.findStudentById(id).orElseThrow(()-> new StudentDontFound());
+	}
+	@PutMapping (value= ID)
+	public void editStudent(@PathVariable int id, @Valid @RequestBody StudentDto studentdto) throws StudentDontFound{
+		if (!this.studentController.editStudent(id, studentdto)) throw new StudentDontFound();
 	}
 }

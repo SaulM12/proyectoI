@@ -41,4 +41,18 @@ public class StudentController {
 			return Optional.empty();
 		}
 	}
+	public boolean editStudent(int id, StudentDto studentdto) {
+		Optional<Student>studOptional= this.studentRepository.findById(id);
+		if(!studOptional.isPresent()) return false;
+		Student student = studOptional.get();
+		student.setCi(studentdto.getCi());
+		student.setNames(studentdto.getNames());
+		student.setLastNames(studentdto.getLastNames());
+		student.setMail(studentdto.getMail());
+		student.setPhone(studentdto.getPhone());
+		student.setBornDate(studentdto.getBornDate());
+		student.setAdress(studentdto.getAdress());
+		return true;
+		
+	}
 }
