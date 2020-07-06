@@ -2,6 +2,7 @@ package com.unibe.edu.proyect.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,5 +32,13 @@ public class StudentController {
 		}
 		return studentsDto;
 		
+	}
+	public Optional<StudentDto> findStudentById(int id){
+		Optional<Student> estOptional= this.studentRepository.findById(id);
+		if(estOptional.isPresent()) {
+			return Optional.of(new StudentDto(estOptional.get()));
+		}else {
+			return Optional.empty();
+		}
 	}
 }
