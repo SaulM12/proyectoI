@@ -36,8 +36,21 @@ public class StudentResourceTest {
 	}
 	@Test
 	public void readAllStudentsTest() {
+		String json= restService.restBuilder(new RestBuilder<String>()).clazz(String.class).path(StudentResource.STUDENT).get().build();
+		System.out.println("----->"+json);
+	}
+	@Test
+	public void readStudentByIdTest() {
 		String json= restService.restBuilder(new RestBuilder<String>()).clazz(String.class).path(StudentResource.STUDENT)
 				.path(StudentResource.ID).expand(1).get().build();
 		System.out.println("----->"+json);
 	}
+	@Test
+	public void editStudentTest() {
+		this.studentDto.setNames("Mateo Christopher");
+		this.studentDto.setLastNames("Guaman Yacelga");
+		restService.restBuilder().path(StudentResource.STUDENT)
+		.path(StudentResource.ID).expand(1).body(studentDto).put().build();
+	}
+	
 }

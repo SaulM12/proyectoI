@@ -16,6 +16,11 @@ public class StudentController {
 
 	@Autowired
 	private StudentRepository studentRepository;
+	
+	public Optional<Student> getStudentById(int id){
+		Optional<Student> studOptional= this.studentRepository.findById(id);
+		return studOptional;
+	}
 
 	public void createStudent(StudentDto studentDto) {
 		Student student = new Student(studentDto.getId_student(), studentDto.getCi(), studentDto.getLastNames(),
@@ -34,7 +39,7 @@ public class StudentController {
 		
 	}
 	public Optional<StudentDto> findStudentById(int id){
-		Optional<Student> estOptional= this.studentRepository.findById(id);
+		Optional<Student> estOptional= this.getStudentById(id);
 		if(estOptional.isPresent()) {
 			return Optional.of(new StudentDto(estOptional.get()));
 		}else {
@@ -42,7 +47,7 @@ public class StudentController {
 		}
 	}
 	public boolean editStudent(int id, StudentDto studentdto) {
-		Optional<Student>studOptional= this.studentRepository.findById(id);
+		Optional<Student>studOptional= this.getStudentById(id);
 		if(!studOptional.isPresent()) return false;
 		Student student = studOptional.get();
 		student.setCi(studentdto.getCi());
@@ -52,6 +57,7 @@ public class StudentController {
 		student.setPhone(studentdto.getPhone());
 		student.setBornDate(studentdto.getBornDate());
 		student.setAdress(studentdto.getAdress());
+		this.studentRepository.save(student);
 		return true;
 		
 	}
