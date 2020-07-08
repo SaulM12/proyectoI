@@ -10,10 +10,10 @@ public class CareerDto {
 	private int semesters;
 	private int hours;
 	private int  credits;
-	public CareerDto(int cod_career, String desscription, int semesters, int hours, int credits) {
+	public CareerDto(int cod_career, String description, int semesters, int hours, int credits) {
 		super();
 		this.cod_career = cod_career;
-		this.desscription = desscription;
+		this.desscription = description;
 		this.semesters = semesters;
 		this.hours = hours;
 		this.credits = credits;
@@ -21,7 +21,7 @@ public class CareerDto {
 	
 	public CareerDto(Career career) {
 		this.cod_career = career.getCod_career();
-		this.desscription = career.getDesscription();
+		this.desscription = career.getDescription();
 		this.semesters = career.getSemesters();
 		this.hours = career.getHours();
 		this.credits = career.getCredits();
@@ -35,11 +35,11 @@ public class CareerDto {
 		this.cod_career = cod_career;
 	}
 
-	public String getDesscription() {
+	public String getDescription() {
 		return desscription;
 	}
 
-	public void setDesscription(String desscription) {
+	public void setDescription(String desscription) {
 		this.desscription = desscription;
 	}
 

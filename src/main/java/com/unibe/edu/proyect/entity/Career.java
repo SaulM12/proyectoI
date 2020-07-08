@@ -11,14 +11,14 @@ public class Career {
 @GeneratedValue(strategy = GenerationType.AUTO)
 	private int cod_career;
 
-	private String desscription;
+	private String description;
 	private int semesters;
 	private int hours;
 	private int  credits;
-	public Career(int cod_career, String desscription, int semesters, int hours, int credits) {
+	public Career(int cod_career, String description, int semesters, int hours, int credits) {
 		super();
 		this.cod_career = cod_career;
-		this.desscription = desscription;
+		this.description = description;
 		this.semesters = semesters;
 		this.hours = hours;
 		this.credits = credits;
@@ -29,11 +29,11 @@ public class Career {
 	public void setCod_career(int cod_career) {
 		this.cod_career = cod_career;
 	}
-	public String getDesscription() {
-		return desscription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDesscription(String desscription) {
-		this.desscription = desscription;
+	public void setDescription(String desscription) {
+		this.description = desscription;
 	}
 	public int getSemesters() {
 		return semesters;
