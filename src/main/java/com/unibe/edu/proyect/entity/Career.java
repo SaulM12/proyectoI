@@ -15,6 +15,9 @@ public class Career {
 	private int semesters;
 	private int hours;
 	private int  credits;
+	public Career() {
+		
+	}
 	public Career(int cod_career, String description, int semesters, int hours, int credits) {
 		super();
 		this.cod_career = cod_career;
