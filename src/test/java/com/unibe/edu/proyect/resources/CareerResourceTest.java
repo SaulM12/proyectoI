@@ -29,7 +29,7 @@ public class CareerResourceTest {
 
 	@Before
 	public void before() {
-		this.careerDto = new CareerDto(1, "Ingeniería en Software", 8, 2000,200);
+		this.careerDto = new CareerDto(2, "Ingeniería en Software", 8, 2000,200);
 	}
 
 	@Test
@@ -49,9 +49,10 @@ public class CareerResourceTest {
 	}
 	@Test
 	public void editCareerTest() {
-		this.careerDto.setDescription("Ingeniería en Sistemas");;
-		restService.restBuilder().path(CareerResource.CAREER)
+		this.careerDto.setDescription("Ingeniería en Sistemas");
+		String json=restService.restBuilder(new RestBuilder<String>()).clazz(String.class).path(CareerResource.CAREER)
 		.path(CareerResource.ID).expand(1).body(careerDto).put().build();
+		System.out.println(json);
 	}
 	
 }

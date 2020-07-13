@@ -2,6 +2,7 @@ package com.unibe.edu.proyect.resources;
 
 import org.junit.Before;
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.internal.runners.statements.ExpectException;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
@@ -28,10 +29,16 @@ private InscriptionDto inscriptionDto;
 
 @Before
 public void Before() {
-	this.studentDto = new StudentDto(1, "1727171404", "Juan Francsco", "Guaman Lara", "JL@S", "0969043552", "2000-04-03",
+	Byte[] A = new Byte[2];
+	A[1] = 1;
+	A[2]=2;
+	this.studentDto = new StudentDto(1, "545", "SAMFDKS JNDJS", "SAKSM JSND", "SDLS", "545456", "2000-04-03",
 			"SLKSDLKS");
-	this.careerDto = new CareerDto(2, "Linceciatura en Gastronomía", 8, 2000,200);
-
-		
+	this.careerDto = new CareerDto(2, "Ingeniería en Software", 8, 2000,200);
+	this.inscriptionDto = new InscriptionDto(1, "Presencial", "2020-08-12", A, A, A, A, A, this.studentDto, this.careerDto);
+	}
+	@Test
+	public void test() {
+		restservice.restBuilder().path(InscriptionResource.INSCRIPTION).body(inscriptionDto).post().build();
 	}
 }
