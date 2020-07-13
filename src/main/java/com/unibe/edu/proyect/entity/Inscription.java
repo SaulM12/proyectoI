@@ -35,7 +35,7 @@ public class Inscription {
 	private Career carrer;
 	
 	public Inscription(int cod_insc, String modality, String date, Byte[] image_ci, Byte[] image_title,
-			Byte[] image_student, Byte[] image_voucher, Byte[] image_vote, Student student) {
+			Byte[] image_student, Byte[] image_voucher, Byte[] image_vote, Student student, Career carrer) {
 		super();
 		this.cod_insc = cod_insc;
 		this.modality = modality;
@@ -45,7 +45,8 @@ public class Inscription {
 		this.image_student = image_student;
 		this.image_voucher = image_voucher;
 		this.image_vote = image_vote;
-		this.student= student;
+		this.student = student;
+		this.carrer = carrer;
 	}
 
 	public int getCod_insc() {
@@ -127,6 +128,8 @@ public class Inscription {
 	public void setCarrer(Career carrer) {
 		this.carrer = carrer;
 	}
+
+	
 
 	
 	
