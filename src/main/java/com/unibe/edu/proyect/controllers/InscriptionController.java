@@ -31,20 +31,20 @@ public class InscriptionController {
 	public String createInscription(InscriptionDto inscriptionDto) {
 		Optional<Student> studentOptional = this.studentController
 				.getStudentById(inscriptionDto.getStudent().getId_student());
-		Optional<Career> careerOptional = this.careerController
-				.getCareerById(inscriptionDto.getCareer().getCod_career());
 		if (!studentOptional.isPresent())
 			return "student";
+		Student student = studentOptional.get();
+		Optional<Career> careerOptional = this.careerController
+				.getCareerById(inscriptionDto.getCareer().getCod_career());
 		if (!careerOptional.isPresent())
 			return "career";
 		Career career = careerOptional.get();
-		Student student = studentOptional.get();
 		Inscription inscription = new Inscription(inscriptionDto.getCod_insc(), inscriptionDto.getModality(),
 				inscriptionDto.getDate(), inscriptionDto.getImage_ci(), inscriptionDto.getImage_title(),
 				inscriptionDto.getImage_student(), inscriptionDto.getImage_voucher(), inscriptionDto.getImage_vote(),
 				student, career);
 		this.inscriptionRepository.save(inscription);
-		return "Created";
+		return "created"; 
 	}
 
 	public List<InscriptionDto> readAllInscriptions() {

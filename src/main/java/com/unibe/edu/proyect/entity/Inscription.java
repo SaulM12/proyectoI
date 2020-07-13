@@ -34,6 +34,10 @@ public class Inscription {
 	@ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private Career carrer;
 	
+	public Inscription() {
+		
+	}
+	
 	public Inscription(int cod_insc, String modality, String date, Byte[] image_ci, Byte[] image_title,
 			Byte[] image_student, Byte[] image_voucher, Byte[] image_vote, Student student, Career carrer) {
 		super();

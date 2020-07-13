@@ -29,16 +29,22 @@ private InscriptionDto inscriptionDto;
 
 @Before
 public void Before() {
-	Byte[] A = new Byte[2];
-	A[1] = 1;
-	A[2]=2;
+	Byte[]A= new Byte[2];
+	A[0] = 1;
+	A[1]=2;
 	this.studentDto = new StudentDto(1, "545", "SAMFDKS JNDJS", "SAKSM JSND", "SDLS", "545456", "2000-04-03",
 			"SLKSDLKS");
-	this.careerDto = new CareerDto(2, "Ingeniería en Software", 8, 2000,200);
+	this.careerDto = new CareerDto(1, "Ingeniería en Software", 8, 2000,200);
 	this.inscriptionDto = new InscriptionDto(1, "Presencial", "2020-08-12", A, A, A, A, A, this.studentDto, this.careerDto);
 	}
 	@Test
-	public void test() {
+	public void createInscriptionTest() {
 		restservice.restBuilder().path(InscriptionResource.INSCRIPTION).body(inscriptionDto).post().build();
+	}
+	@Test
+	public void readAllInscriptionsTest() {
+		String json= restservice.restBuilder(new RestBuilder<String>()).clazz(String.class)
+				.path(InscriptionResource.INSCRIPTION).get().build();
+		System.out.println("-->"+ json);
 	}
 }
