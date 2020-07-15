@@ -23,7 +23,7 @@ import com.unibe.edu.proyect.resources.exeptions.StudentDontFound;
 @RestController
 @RequestMapping(InscriptionResource.INSCRIPTION)
 public class InscriptionResource {
-	public static final String INSCRIPTION = " /inscriptions";
+	public static final String INSCRIPTION = "/inscriptions";
 	public static final String ID = "/{id}";
 
 	@Autowired

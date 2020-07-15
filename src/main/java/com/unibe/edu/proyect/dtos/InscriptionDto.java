@@ -9,20 +9,20 @@ public class InscriptionDto {
 	private String modality;
 	private String date;
 
-	private Byte[] image_ci;
+	private byte[] image_ci;
 
-	private Byte[] image_title;
+	private byte[] image_title;
 
-	private Byte[] image_student;
+	private byte[] image_student;
 
-	private Byte[] image_voucher;
+	private byte[] image_voucher;
 
-	private Byte[] image_vote;
+	private byte[] image_vote;
 
 	private StudentDto student;
 	private CareerDto career;
-	public InscriptionDto(int cod_insc, String modality, String date, Byte[] image_ci, Byte[] image_title,
-			Byte[] image_student, Byte[] image_voucher, Byte[] image_vote, StudentDto student, CareerDto career) {
+	public InscriptionDto(int cod_insc, String modality, String date, byte[] image_ci, byte[] image_title,
+			byte[] image_student, byte[] image_voucher, byte[] image_vote, StudentDto student, CareerDto career) {
 		
 		this.cod_insc = cod_insc;
 		this.modality = modality;
@@ -74,43 +74,43 @@ public class InscriptionDto {
 		this.date = date;
 	}
 
-	public Byte[] getImage_ci() {
+	public byte[] getImage_ci() {
 		return image_ci;
 	}
 
-	public void setImage_ci(Byte[] image_ci) {
+	public void setImage_ci(byte[] image_ci) {
 		this.image_ci = image_ci;
 	}
 
-	public Byte[] getImage_title() {
+	public byte[] getImage_title() {
 		return image_title;
 	}
 
-	public void setImage_title(Byte[] image_title) {
+	public void setImage_title(byte[] image_title) {
 		this.image_title = image_title;
 	}
 
-	public Byte[] getImage_student() {
+	public byte[] getImage_student() {
 		return image_student;
 	}
 
-	public void setImage_student(Byte[] image_student) {
+	public void setImage_student(byte[] image_student) {
 		this.image_student = image_student;
 	}
 
-	public Byte[] getImage_voucher() {
+	public byte[] getImage_voucher() {
 		return image_voucher;
 	}
 
-	public void setImage_voucher(Byte[] image_voucher) {
+	public void setImage_voucher(byte[] image_voucher) {
 		this.image_voucher = image_voucher;
 	}
 
-	public Byte[] getImage_vote() {
+	public byte[] getImage_vote() {
 		return image_vote;
 	}
 
-	public void setImage_vote(Byte[] image_vote) {
+	public void setImage_vote(byte[] image_vote) {
 		this.image_vote = image_vote;
 	}
 

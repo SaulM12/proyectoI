@@ -23,7 +23,7 @@ public class StudentController {
 	}
 
 	public void createStudent(StudentDto studentDto) {
-		Student student = new Student(studentDto.getId_student(), studentDto.getCi(), studentDto.getLastNames(),
+		Student student = new Student(studentDto.getId_student(), studentDto.getCi(), studentDto.getNames(),
 				studentDto.getLastNames(), studentDto.getMail(), studentDto.getPhone(), studentDto.getBornDate(),
 				studentDto.getAdress());
 		this.studentRepository.save(student);

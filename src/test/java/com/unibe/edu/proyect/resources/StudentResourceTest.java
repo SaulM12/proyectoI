@@ -26,8 +26,8 @@ public class StudentResourceTest {
 
 	@Before
 	public void before() {
-		this.studentDto = new StudentDto(1, "545", "SAMFDKS JNDJS", "SAKSM JSND", "SDLS", "545456", "2000-04-03",
-				"SLKSDLKS");
+		this.studentDto = new StudentDto(2, "5", "Carolina Emilia", "Lara Diaz", "CELD@gmail.com", "0969043552", "1999-04-03",
+				"Colinas del Norte");
 	}
 
 	@Test
@@ -49,6 +49,8 @@ public class StudentResourceTest {
 	public void editStudentTest() {
 		this.studentDto.setNames("Mateo Christopher");
 		this.studentDto.setLastNames("Guaman Yacelga");
+		this.studentDto.setAdress("Conocoto");
+		this.studentDto.setMail("ll@gmail.com");
 		restService.restBuilder().path(StudentResource.STUDENT)
 		.path(StudentResource.ID).expand(1).body(studentDto).put().build();
 	}
