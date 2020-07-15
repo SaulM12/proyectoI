@@ -29,7 +29,7 @@ public class CareerResourceTest {
 
 	@Before
 	public void before() {
-		this.careerDto = new CareerDto(2, "Ingeniería en Software", 8, 2000,200);
+		this.careerDto = new CareerDto(3, "Turismo", 8, 2500,220);
 	}
 
 	@Test

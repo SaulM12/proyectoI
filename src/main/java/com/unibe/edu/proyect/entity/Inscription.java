@@ -18,16 +18,8 @@ public class Inscription {
 
 	private String modality;
 	private String date;
-	@Lob
-	private byte[] image_ci;
-	@Lob
-	private byte[] image_title;
-	@Lob
-	private byte[] image_student;
-	@Lob
-	private byte[] image_voucher;
-	@Lob
-	private byte[] image_vote;
+
+	private String image_ci, image_title,image_student,image_voucher,image_vote;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Student student;
@@ -37,9 +29,9 @@ public class Inscription {
 	public Inscription() {
 		
 	}
-	
-	public Inscription(int cod_insc, String modality, String date, byte[] image_ci, byte[] image_title,
-			byte[] image_student, byte[] image_voucher, byte[] image_vote, Student student, Career carrer) {
+
+	public Inscription(int cod_insc, String modality, String date, String image_ci, String image_title,
+			String image_student, String image_voucher, String image_vote, Student student, Career carrer) {
 		super();
 		this.cod_insc = cod_insc;
 		this.modality = modality;
@@ -77,43 +69,43 @@ public class Inscription {
 		this.date = date;
 	}
 
-	public byte[] getImage_ci() {
+	public String getImage_ci() {
 		return image_ci;
 	}
 
-	public void setImage_ci(byte[] image_ci) {
+	public void setImage_ci(String image_ci) {
 		this.image_ci = image_ci;
 	}
 
-	public byte[] getImage_title() {
+	public String getImage_title() {
 		return image_title;
 	}
 
-	public void setImage_title(byte[] image_title) {
+	public void setImage_title(String image_title) {
 		this.image_title = image_title;
 	}
 
-	public byte[] getImage_student() {
+	public String getImage_student() {
 		return image_student;
 	}
 
-	public void setImage_student(byte[] image_student) {
+	public void setImage_student(String image_student) {
 		this.image_student = image_student;
 	}
 
-	public byte[] getImage_voucher() {
+	public String getImage_voucher() {
 		return image_voucher;
 	}
 
-	public void setImage_voucher(byte[] image_voucher) {
+	public void setImage_voucher(String image_voucher) {
 		this.image_voucher = image_voucher;
 	}
 
-	public byte[] getImage_vote() {
+	public String getImage_vote() {
 		return image_vote;
 	}
 
-	public void setImage_vote(byte[] image_vote) {
+	public void setImage_vote(String image_vote) {
 		this.image_vote = image_vote;
 	}
 
@@ -132,7 +124,7 @@ public class Inscription {
 	public void setCarrer(Career carrer) {
 		this.carrer = carrer;
 	}
-
+	
 	
 
 	
